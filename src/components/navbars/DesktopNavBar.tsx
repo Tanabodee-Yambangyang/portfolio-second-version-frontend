@@ -5,7 +5,7 @@ import { FaFacebook, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
 
-export default function NavBar() {
+export default function DesktopNavBar() {
     return (
         <nav className="flex justify-center items-center fixed top-0 w-full h-16 bg-neutral-800 text-white z-50">
             <div className="flex justify-between items-center w-full max-w-[1250px] px-14">
@@ -60,4 +60,4 @@ export default function NavBar() {
             </div>
         </nav>
     );
-}
+};
