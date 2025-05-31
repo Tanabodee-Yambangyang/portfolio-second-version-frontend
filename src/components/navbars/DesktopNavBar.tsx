@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { FaFacebook, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
 
-export default function DesktopNavBar() {
+import { NavBarPropsInterface } from "@/types/navbars";
+
+export default function DesktopNavBar(contactLinks: NavBarPropsInterface) {
     return (
         <nav className="flex justify-center items-center fixed top-0 w-full h-16 bg-neutral-800 text-white z-50">
             <div className="flex justify-between items-center w-full max-w-[1250px] px-14">
@@ -22,40 +23,18 @@ export default function DesktopNavBar() {
 
                 {/* Social Icons */}
                 <div className="flex gap-6">
-                    <a
-                        href="https://www.facebook.com/profile.php?id=100007994625777"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                        className="hover:text-gray-300 transition"
-                    >
-                        <FaFacebook size={30} />
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/tanabodee-yambangyang-11a3882a2/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                        className="hover:text-gray-300 transition"
-                    >
-                        <FaLinkedin size={30} />
-                    </a>
-                    <a
-                        href="https://github.com/Tanabodee-Yambangyang"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub"
-                        className="hover:text-gray-300 transition"
-                    >
-                        <FaGithub size={30} />
-                    </a>
-                    <a
-                        href="mailto:tanabodeeyambangyang@gmail.com"
-                        aria-label="Email"
-                        className="hover:text-gray-300 transition"
-                    >
-                        <FaEnvelope size={30} />
-                    </a>
+                    {contactLinks.contactLinks.map(({ href, label, icon }) => (
+                        <a
+                            key={label}
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={label}
+                            className="hover:text-gray-300 transition"
+                        >
+                            {icon}
+                        </a>
+                    ))}
                 </div>
             </div>
         </nav>
