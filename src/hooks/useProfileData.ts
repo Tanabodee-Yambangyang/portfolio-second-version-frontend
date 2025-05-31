@@ -1,5 +1,4 @@
 "use client";
-
 import { fetchPortfolioData } from "@/fetcher";
 import { useState, useEffect } from "react";
 import { Contact } from "@/types/fetchedData";

@@ -1,12 +1,11 @@
 "use client";
-
 import { FaFacebook, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import { FiSun, FiMoon } from "react-icons/fi";
+import clsx from "clsx";
 
 import DesktopNavBar from "@/components/navbars/DesktopNavBar";
 import MobileTabletNavbar from "@/components/navbars/MobileTabletNavBar";
-import { usePortfolioData } from "@/hooks"
-import clsx from "clsx";
+import LiveClock from "@/components/LiveClock";
+import { usePortfolioData } from "@/hooks/useProfileData"
 
 export default function Home() {
   const {
@@ -48,8 +47,8 @@ export default function Home() {
       <div className="block lg:hidden w-full">
         <MobileTabletNavbar contactLinks={contactLinks} isDarkTheme={isDarkTheme} handleSwitchTheme={handleSwitchTheme} />
       </div>
-      <div className={"pt-35 w-full h-full max-w-[1250px] px-14"}>
-        
+      <div className={"w-full h-full max-w-[1250px] lg:px-14 lg:pt-35 pt-30 px-6"}>
+        <label> <LiveClock /> </label>
       </div>
     </div>
   );
