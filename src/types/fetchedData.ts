@@ -43,6 +43,13 @@ export interface Skills {
   languages: string[];
 }
 
+export interface Introduction {
+  first_name: string;
+  last_name: string;
+  address: string;
+  introduction: string;
+}
+
 export interface Profile {
   first_name: string;
   last_name: string;

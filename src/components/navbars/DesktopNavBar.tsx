@@ -58,7 +58,7 @@ export default function DesktopNavBar({
             className="cursor-pointer flex items-center"
             onClick={handleSwitchTheme}
           >
-             {isDarkTheme ? <FiMoon size={35} /> : <FiSun size={35} />}
+             {isDarkTheme ? <FiMoon size={35} className="hover:text-gray-300 transition" /> : <FiSun size={35} className="hover:text-gray-300 transition" />}
           </div>
         </div>
       </div>
