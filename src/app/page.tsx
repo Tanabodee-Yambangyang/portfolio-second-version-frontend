@@ -43,19 +43,13 @@ export default function Home() {
   return (
     <div className={clsx("grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)] transition", isDarkTheme ? "bg-neutral-900 text-white" : "")}>
       <div className="hidden lg:block w-full">
-        <DesktopNavBar contactLinks={contactLinks} />
+        <DesktopNavBar contactLinks={contactLinks} isDarkTheme={isDarkTheme} handleSwitchTheme={handleSwitchTheme} />
       </div>
       <div className="block lg:hidden w-full">
-        <MobileTabletNavbar contactLinks={contactLinks} />
+        <MobileTabletNavbar contactLinks={contactLinks} isDarkTheme={isDarkTheme} handleSwitchTheme={handleSwitchTheme} />
       </div>
       <div className={"pt-35 w-full h-full max-w-[1250px] px-14"}>
-        <div className="cursor-pointer flex items-center gap-4 text-2xl" onClick={handleSwitchTheme}>
-          {isDarkTheme ? (
-            <FiMoon size={24} />
-          ) : (
-            <FiSun size={24} />
-          )}
-        </div>
+        
       </div>
     </div>
   );
