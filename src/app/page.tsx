@@ -17,7 +17,8 @@ export default function Home() {
     isDarkTheme,
     contactData,
     profile,
-    skillsData
+    skillsData,
+    educationData
   } = usePortfolioData();
 
   const contactLinks = [
@@ -55,7 +56,7 @@ export default function Home() {
       <div className={"flex flex-col gap-12 w-full h-full max-w-[1250px] xl:px-14 xl:pt-35 pt-30 px-6"}>
           {/* <label> <LiveClock /> </label> */}
           <IntroductionSection isDarkTheme={isDarkTheme} profile={profile} />
-          <AboutMeSection isDarkTheme={isDarkTheme} profile={profile} />
+          <AboutMeSection isDarkTheme={isDarkTheme} profile={profile} educationData={educationData} />
           <SkillsSection isDarkTheme={isDarkTheme} skills={skillsData} profile={undefined} />
       </div>
     </div>

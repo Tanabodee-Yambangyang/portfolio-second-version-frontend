@@ -25,19 +25,22 @@ export default function DesktopNavBar({
             priority
           />
           <div className="flex gap-6 text-lg font-medium">
-            <Button className="cursor-pointer w-25 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
+            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
               About Me
             </Button>
-            <Button className="cursor-pointer w-25 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
+            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
+              Education
+            </Button>
+            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
               Skills & Tools
             </Button>
-            <Button className="cursor-pointer w-25 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
+            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
               Experience
             </Button>
-            <Button className="cursor-pointer w-25 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
+            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
               Projects
             </Button> 
-            <Button className="cursor-pointer w-25 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
+            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
               Contact
             </Button>           
           </div>

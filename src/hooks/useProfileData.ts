@@ -8,7 +8,7 @@ export const usePortfolioData = () => {
     const [error, setError] = useState<boolean>(false);
     const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
     const [contactData, setContactData] = useState<Contact>();
-    const [educationData, setEducationData] = useState<Education>();
+    const [educationData, setEducationData] = useState<Education[]>();
     const [projectData, setProjectData] = useState<Project>();
     const [experienceData, setExperienceData] = useState<Experience>();
     const [skillsData, setSkillsData] = useState<Skills>();
@@ -35,6 +35,7 @@ export const usePortfolioData = () => {
                 setContactData(data.contact);
                 setProfile(introData);
                 setSkillsData(data.skills);
+                setEducationData(data.education);
             } catch (err) {
                 setError(true);
             } finally {
@@ -52,6 +53,7 @@ export const usePortfolioData = () => {
         isDarkTheme,
         contactData,
         profile,
-        skillsData
+        skillsData,
+        educationData
     }
 };

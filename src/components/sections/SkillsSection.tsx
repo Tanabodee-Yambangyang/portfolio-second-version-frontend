@@ -82,7 +82,7 @@ export default function SkillsSection({ isDarkTheme, skills }: SkillsSectionProp
           <div key={idx}>
             <motion.div
               variants={titleVariants}
-              className="text-xl font-semibold mb-2"
+              className="sm:text-xl text-base font-semibold mb-2"
             >
               {category.title}
             </motion.div>

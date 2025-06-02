@@ -1,4 +1,4 @@
-import { Skills } from "./fetchedData";
+import { Skills, Education } from "./fetchedData";
 
 export type IntroductionSectionProps = {
   isDarkTheme: boolean;
@@ -12,10 +12,16 @@ export type IntroductionSectionProps = {
 };
 
 export type AboutMeSectionProps = IntroductionSectionProps & {
-  // additional props for AboutMeSection here if needed in the future
+  educationData: Education[] | null | undefined;
 };
 
 export type SkillsSectionProps = IntroductionSectionProps & {
   skills: Skills | null | undefined;
   // additional props for AboutMeSection here if needed in the future
+};
+
+export type EducationCardProps = IntroductionSectionProps & {
+  key: string;
+  id: string;
+  educationData: Education;
 };
