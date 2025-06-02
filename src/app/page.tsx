@@ -7,6 +7,7 @@ import MobileTabletNavbar from "@/components/navbars/MobileTabletNavBar";
 import { usePortfolioData } from "@/hooks/useProfileData"
 import IntroductionSection from "@/components/sections/IntroductionSection";
 import AboutMeSection from "@/components/sections/AboutMeSection";
+import SkillsSection from "@/components/sections/SkillsSection";
 
 export default function Home() {
   const {
@@ -15,7 +16,8 @@ export default function Home() {
     handleSwitchTheme,
     isDarkTheme,
     contactData,
-    profile
+    profile,
+    skillsData
   } = usePortfolioData();
 
   const contactLinks = [
@@ -54,6 +56,7 @@ export default function Home() {
           {/* <label> <LiveClock /> </label> */}
           <IntroductionSection isDarkTheme={isDarkTheme} profile={profile} />
           <AboutMeSection isDarkTheme={isDarkTheme} profile={profile} />
+          <SkillsSection isDarkTheme={isDarkTheme} skills={skillsData} profile={undefined} />
       </div>
     </div>
   );

@@ -17,8 +17,8 @@ export default function LiveClock({
     const isLargeScreen = useMediaQuery("(min-width: 1280px)");
 
     const format = isLargeScreen
-        ? "dddd, DD MMMM YYYY, hh:mm A"
-        : "YYYY-MM-DD, hh:mm A";
+        ? "dddd, DD MMMM YYYY, hh:mm:ss A"
+        : "YYYY-MM-DD, hh:mm:ss A";
 
     if (!hasMounted) return null;
 

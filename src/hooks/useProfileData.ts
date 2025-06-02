@@ -32,9 +32,9 @@ export const usePortfolioData = () => {
                     about_me: data.about_me,
                     introduction: data.introduction
                 };
-                console.log(introData);
                 setContactData(data.contact);
                 setProfile(introData);
+                setSkillsData(data.skills);
             } catch (err) {
                 setError(true);
             } finally {
@@ -51,6 +51,7 @@ export const usePortfolioData = () => {
         handleSwitchTheme,
         isDarkTheme,
         contactData,
-        profile
+        profile,
+        skillsData
     }
 };
