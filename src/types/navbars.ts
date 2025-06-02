@@ -7,7 +7,6 @@ interface ContactLink {
 }
 
 export interface NavBarPropsInterface {
-  contactLinks: ContactLink[]; // <- not wrapped in an object
   isDarkTheme: boolean;
   handleSwitchTheme: () => void;
 }

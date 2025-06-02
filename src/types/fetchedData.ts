@@ -44,16 +44,20 @@ export interface Skills {
 }
 
 export interface Introduction {
+  image: string;
   first_name: string;
   last_name: string;
   address: string;
+  about_me: string;
   introduction: string;
 }
 
 export interface Profile {
+  image: string;
   first_name: string;
   last_name: string;
   address: string;
+  about_me: string;
   contact: Contact;
   introduction: string;
   education: Education[];

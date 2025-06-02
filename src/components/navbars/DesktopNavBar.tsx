@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { FiMoon, FiSun } from "react-icons/fi";
+
 import { Button } from "@/components/ui/button";
+import LiveClock from "@/components/LiveClock";
 import { NavBarPropsInterface } from "@/types/navbars";
 
 export default function DesktopNavBar({
-  contactLinks,
   isDarkTheme,
   handleSwitchTheme,
 }: NavBarPropsInterface) {
@@ -24,24 +25,27 @@ export default function DesktopNavBar({
             priority
           />
           <div className="flex gap-6 text-lg font-medium">
-            <Button className="cursor-pointer w-30" variant="ghost">
+            <Button className="cursor-pointer w-25 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
               About Me
             </Button>
-            <Button className="cursor-pointer w-30" variant="ghost">
+            <Button className="cursor-pointer w-25 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
               Skills & Tools
             </Button>
-            <Button className="cursor-pointer w-30" variant="ghost">
-              Projects
-            </Button>
-            <Button className="cursor-pointer w-30" variant="ghost">
+            <Button className="cursor-pointer w-25 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
               Experience
             </Button>
+            <Button className="cursor-pointer w-25 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
+              Projects
+            </Button> 
+            <Button className="cursor-pointer w-25 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
+              Contact
+            </Button>           
           </div>
         </div>
 
         {/* Social Icons + Theme Switch */}
-        <div className="flex gap-6">
-          {contactLinks.map(({ href, label, icon }) => (
+        <div className="flex items-center gap-6">
+          {/* {contactLinks.map(({ href, label, icon }) => (
             <a
               key={label}
               href={href}
@@ -52,13 +56,15 @@ export default function DesktopNavBar({
             >
               {icon}
             </a>
-          ))}
+          ))} */}
+          <label> <LiveClock /> </label>
+
           <label className="flex items-center text-4xl"> | </label>
           <div
             className="cursor-pointer flex items-center"
             onClick={handleSwitchTheme}
           >
-             {isDarkTheme ? <FiMoon size={35} className="hover:text-gray-300 transition" /> : <FiSun size={35} className="hover:text-gray-300 transition" />}
+            {isDarkTheme ? <FiMoon size={35} className="hover:text-gray-300 transition" /> : <FiSun size={35} className="hover:text-gray-300 transition" />}
           </div>
         </div>
       </div>

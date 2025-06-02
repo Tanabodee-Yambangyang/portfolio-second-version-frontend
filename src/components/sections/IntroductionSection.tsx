@@ -14,7 +14,7 @@ export default function IntroductionSection({ isDarkTheme, profile }: Introducti
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className={clsx(
-                "flex flex-col justify-between h-100 border-b-1 pb-12",
+                "flex flex-col justify-between h-90 border-b-1 pb-12",
                 isDarkTheme ? "border-white" : "border-gray-700"
             )}
         >

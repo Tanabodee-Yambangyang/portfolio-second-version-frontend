@@ -1,21 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Button } from "@/components/ui/button";
-import { NavBarPropsInterface } from "@/types/navbars";
+// import {
+//   Drawer,
+//   DrawerClose,
+//   DrawerContent,
+//   DrawerFooter,
+//   DrawerHeader,
+//   DrawerTitle,
+//   DrawerTrigger,
+// } from "@/components/ui/drawer";
+// import { Button } from "@/components/ui/button";
 import { FiMoon, FiSun } from "react-icons/fi";
 
+import LiveClock from "@/components/LiveClock";
+import { NavBarPropsInterface } from "@/types/navbars";
+
 export default function DesktopNavBar({
-  contactLinks,
   isDarkTheme,
   handleSwitchTheme,
 }: NavBarPropsInterface) {
@@ -25,8 +26,8 @@ export default function DesktopNavBar({
         {/* Logo */}
         <Image src="/logo1.svg" width={40} height={40} alt="Website Logo" priority />
 
-        <div className="flex justify-between gap-4">
-          <Drawer>
+        <div className="flex items-center justify-between gap-4">
+          {/* <Drawer>
             <DrawerTrigger asChild>
               <Button
                 className="h-9 p-0 bg-transparent text-white"
@@ -60,7 +61,9 @@ export default function DesktopNavBar({
                 </DrawerFooter>
               </div>
             </DrawerContent>
-          </Drawer>
+          </Drawer> */}
+
+          <label> <LiveClock /> </label> 
           <label className="flex items-center text-2xl"> | </label>
           <div
             className="cursor-pointer flex items-center"

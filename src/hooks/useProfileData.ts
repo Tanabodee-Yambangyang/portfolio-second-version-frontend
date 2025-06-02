@@ -25,11 +25,14 @@ export const usePortfolioData = () => {
                 const result = await fetchPortfolioData();
                 const data = result[0]
                 const introData = {
+                    image: data.image,
                     first_name: data.first_name,
                     last_name: data.last_name,
                     address: data.address,
+                    about_me: data.about_me,
                     introduction: data.introduction
                 };
+                console.log(introData);
                 setContactData(data.contact);
                 setProfile(introData);
             } catch (err) {

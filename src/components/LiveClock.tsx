@@ -14,11 +14,11 @@ export default function LiveClock({
         setHasMounted(true);
     }, []);
 
-    const isLargeScreen = useMediaQuery("(min-width: 1024px)");
+    const isLargeScreen = useMediaQuery("(min-width: 1280px)");
 
     const format = isLargeScreen
-        ? "dddd, DD MMMM YYYY, hh:mm:ss A"
-        : "YYYY-MM-DD, hh:mm:ss A";
+        ? "dddd, DD MMMM YYYY, hh:mm A"
+        : "YYYY-MM-DD, hh:mm A";
 
     if (!hasMounted) return null;
 
