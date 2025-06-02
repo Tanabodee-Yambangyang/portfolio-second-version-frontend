@@ -8,6 +8,7 @@ import { usePortfolioData } from "@/hooks/useProfileData"
 import IntroductionSection from "@/components/sections/IntroductionSection";
 import AboutMeSection from "@/components/sections/AboutMeSection";
 import SkillsSection from "@/components/sections/SkillsSection";
+import ExperiencesSection from "@/components/sections/ExperiencesSection";
 
 export default function Home() {
   const {
@@ -18,7 +19,8 @@ export default function Home() {
     contactData,
     profile,
     skillsData,
-    educationData
+    educationData,
+    experienceData
   } = usePortfolioData();
 
   const contactLinks = [
@@ -58,6 +60,7 @@ export default function Home() {
           <IntroductionSection isDarkTheme={isDarkTheme} profile={profile} />
           <AboutMeSection isDarkTheme={isDarkTheme} profile={profile} educationData={educationData} />
           <SkillsSection isDarkTheme={isDarkTheme} skills={skillsData} profile={undefined} />
+          <ExperiencesSection isDarkTheme={isDarkTheme} profile={undefined} experienceData={experienceData} />
       </div>
     </div>
   );

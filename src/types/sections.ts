@@ -1,4 +1,4 @@
-import { Skills, Education } from "./fetchedData";
+import { Skills, Education, Experience } from "./fetchedData";
 
 export type IntroductionSectionProps = {
   isDarkTheme: boolean;
@@ -25,3 +25,11 @@ export type EducationCardProps = IntroductionSectionProps & {
   id: string;
   educationData: Education;
 };
+
+export type ExperiencesSectionProps = IntroductionSectionProps & {
+  experienceData: Experience[] | null | undefined;
+}
+
+export type ExperienceCardProps = {
+  experience: Experience;
+}

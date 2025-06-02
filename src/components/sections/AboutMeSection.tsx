@@ -88,6 +88,25 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData }: 
                             </div>
                         </motion.div>
                     </motion.div>
+                    {/* Mobile Image */}
+                    <motion.div
+                        className="lg:hidden flex justify-center items-center"
+                        variants={containerVariants}
+                    >
+                        <motion.div
+                            variants={fadeUpVariants}
+                            whileTap={{ scale: 0.98 }}
+                        >
+                            <div className="h-90 w-70 p-6 py-12 border border-gray-300 shadow-md bg-white">
+                                <Image
+                                    src="/profile_pic.jpg"
+                                    width={500}
+                                    height={500}
+                                    alt="Picture of the author"
+                                />
+                            </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
             </div>
             {/* Left-side Image (Desktop) */}
@@ -97,7 +116,7 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData }: 
             >
                 <motion.div
                     variants={fadeUpVariants}
-                    className="lg:text-3xl md:text-2xl sm:text-xl text-base mb-8"
+                    className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg mb-8"
                 >
                     Education.
                 </motion.div>
@@ -105,36 +124,20 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData }: 
                     variants={fadeUpVariants}
                     whileTap={{ scale: 0.98 }}
                 >
+                    <div className="">
+
+                    </div>
                     {educationData?.map((educationData, index) => (
                         <div key={educationData.id}>
                             <EducationCard
-                                key={educationData.id} // this is for React's internal tracking only
-                                id={educationData.id} // explicitly passing id as prop
+                                key={educationData.id}
+                                id={educationData.id}
                                 educationData={educationData}
                                 isDarkTheme={isDarkTheme}
                                 profile={undefined}
                             />
                         </div>
                     ))}
-                </motion.div>
-            </motion.div>
-            {/* Mobile Image */}
-            <motion.div
-                className="lg:hidden flex justify-center items-center"
-                variants={containerVariants}
-            >
-                <motion.div
-                    variants={fadeUpVariants}
-                    whileTap={{ scale: 0.98 }}
-                >
-                    <div className="h-90 w-70 p-6 py-12 border border-gray-300 shadow-md bg-white">
-                        <Image
-                            src="/profile_pic.jpg"
-                            width={500}
-                            height={500}
-                            alt="Picture of the author"
-                        />
-                    </div>
                 </motion.div>
             </motion.div>
         </motion.div>

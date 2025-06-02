@@ -10,7 +10,7 @@ export const usePortfolioData = () => {
     const [contactData, setContactData] = useState<Contact>();
     const [educationData, setEducationData] = useState<Education[]>();
     const [projectData, setProjectData] = useState<Project>();
-    const [experienceData, setExperienceData] = useState<Experience>();
+    const [experienceData, setExperienceData] = useState<Experience[]>();
     const [skillsData, setSkillsData] = useState<Skills>();
     const [profile, setProfile] = useState<Introduction>();
 
@@ -36,6 +36,7 @@ export const usePortfolioData = () => {
                 setProfile(introData);
                 setSkillsData(data.skills);
                 setEducationData(data.education);
+                setExperienceData(data.experiences);
             } catch (err) {
                 setError(true);
             } finally {
@@ -54,6 +55,7 @@ export const usePortfolioData = () => {
         contactData,
         profile,
         skillsData,
-        educationData
+        educationData,
+        experienceData
     }
 };
