@@ -9,6 +9,7 @@ import IntroductionSection from "@/components/sections/IntroductionSection";
 import AboutMeSection from "@/components/sections/AboutMeSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ExperiencesSection from "@/components/sections/ExperiencesSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
 
 export default function Home() {
   const {
@@ -20,7 +21,8 @@ export default function Home() {
     profile,
     skillsData,
     educationData,
-    experienceData
+    experienceData,
+    projectData
   } = usePortfolioData();
 
   const contactLinks = [
@@ -61,6 +63,7 @@ export default function Home() {
           <AboutMeSection isDarkTheme={isDarkTheme} profile={profile} educationData={educationData} />
           <SkillsSection isDarkTheme={isDarkTheme} skills={skillsData} profile={undefined} />
           <ExperiencesSection isDarkTheme={isDarkTheme} profile={undefined} experienceData={experienceData} />
+          <ProjectsSection isDarkTheme={isDarkTheme} profile={undefined} projectData={projectData} />
       </div>
     </div>
   );

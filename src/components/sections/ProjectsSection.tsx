@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import clsx from "clsx";
 
+import ProjectCard from "./ProjectCard";
+
 import { ProjectsSectionProps } from "@/types/sections";
 
-export default function ProjectsSection({ isDarkTheme }: ProjectsSectionProps) {
+export default function ProjectsSection({ isDarkTheme, projectData }: ProjectsSectionProps) {
     const containerVariants = {
         hidden: {},
         visible: {
@@ -43,6 +45,20 @@ export default function ProjectsSection({ isDarkTheme }: ProjectsSectionProps) {
                 className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg"
             >
                 Projects.
+            </motion.div>
+            <motion.div
+                className="grid md:grid-cols-3 grid-cols-1 w-full gap-8"
+                variants={containerVariants}
+            >
+                {projectData?.map((project, index) => (
+                    <motion.div
+                        key={project.id}
+                        variants={fadeUpVariants}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <ProjectCard key={project.id} project={project} isDarkTheme={isDarkTheme} />
+                    </motion.div>
+                ))}
             </motion.div>
         </motion.div>
     );

@@ -40,4 +40,5 @@ export type ProjectsSectionProps = IntroductionSectionProps & {
 
 export type ProjectCardProps = {
   project: Project;
+  isDarkTheme: boolean;
 }

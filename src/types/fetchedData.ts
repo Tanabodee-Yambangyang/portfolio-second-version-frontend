@@ -23,6 +23,7 @@ export interface Project {
   technologies: string[];
   github: string;
   responsibilities: string[];
+  images: string[];
 }
 
 export interface Experience {
