@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
 import clsx from "clsx";
 
-import ExperienceCard from "@/components/sections/ExperienceCard";
+import { ProjectsSectionProps } from "@/types/sections";
 
-import { ExperiencesSectionProps } from "@/types/sections"
-
-export default function ExperiencesSection({ isDarkTheme, experienceData }: ExperiencesSectionProps) {
+export default function ProjectsSection({ isDarkTheme }: ProjectsSectionProps) {
     const containerVariants = {
         hidden: {},
         visible: {
@@ -44,20 +42,7 @@ export default function ExperiencesSection({ isDarkTheme, experienceData }: Expe
                 variants={fadeUpVariants}
                 className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg"
             >
-                Experiences.
-            </motion.div>
-            <motion.div
-                className="justify-center items-center w-full"
-                variants={containerVariants}
-            >
-                <motion.div
-                    variants={fadeUpVariants}
-                    whileTap={{ scale: 0.98 }}
-                >
-                    {experienceData?.map((experience, index) => (
-                        <ExperienceCard key={experience.id} experience={experience} />
-                    ))}
-                </motion.div>
+                Projects.
             </motion.div>
         </motion.div>
     );

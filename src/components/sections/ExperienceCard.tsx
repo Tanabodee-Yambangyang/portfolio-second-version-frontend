@@ -2,10 +2,9 @@ import {
     Card,
     CardDescription,
     CardContent,
-    CardFooter,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import { ExperienceCardProps } from "@/types/sections";
 
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
