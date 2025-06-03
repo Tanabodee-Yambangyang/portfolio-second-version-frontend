@@ -44,7 +44,7 @@ export default function ExperiencesSection({ isDarkTheme, experienceData }: Expe
                 variants={fadeUpVariants}
                 className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg"
             >
-                Experiences.
+                Experience.
             </motion.div>
             <motion.div
                 className="justify-center items-center w-full"
@@ -52,7 +52,6 @@ export default function ExperiencesSection({ isDarkTheme, experienceData }: Expe
             >
                 <motion.div
                     variants={fadeUpVariants}
-                    whileTap={{ scale: 0.98 }}
                 >
                     {experienceData?.map((experience, index) => (
                         <ExperienceCard key={experience.id} experience={experience} />

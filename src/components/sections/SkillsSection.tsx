@@ -95,7 +95,6 @@ export default function SkillsSection({ isDarkTheme, skills }: SkillsSectionProp
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  whileTap={{ scale: 0.95 }}
                 >
                   <div
                     className={clsx(

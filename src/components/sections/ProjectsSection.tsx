@@ -10,8 +10,8 @@ export default function ProjectsSection({ isDarkTheme, projectData }: ProjectsSe
         hidden: {},
         visible: {
             transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.05,
+                staggerChildren: 0.06,
+                delayChildren: 0.005,
             },
         },
     };
@@ -47,18 +47,13 @@ export default function ProjectsSection({ isDarkTheme, projectData }: ProjectsSe
                 Projects.
             </motion.div>
             <motion.div
-                className="grid md:grid-cols-3 grid-cols-1 w-full gap-8"
                 variants={containerVariants}
             >
-                {projectData?.map((project, index) => (
-                    <motion.div
-                        key={project.id}
-                        variants={fadeUpVariants}
-                        whileTap={{ scale: 0.95 }}
-                    >
+                <div className="grid md:grid-cols-3 grid-cols-1 w-full gap-8">
+                    {projectData?.map((project, index) => (
                         <ProjectCard key={project.id} project={project} isDarkTheme={isDarkTheme} />
-                    </motion.div>
-                ))}
+                    ))}
+                </div>
             </motion.div>
         </motion.div>
     );

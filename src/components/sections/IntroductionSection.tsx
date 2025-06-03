@@ -68,7 +68,6 @@ export default function IntroductionSection({ isDarkTheme, profile }: Introducti
         <motion.div
           variants={fadeUpVariants}
           whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
         >
           <Button className={clsx("cursor-pointer sm:w-50", isDarkTheme ? "bg-white text-black" : "")}>
             <> View my projects </>
@@ -79,7 +78,6 @@ export default function IntroductionSection({ isDarkTheme, profile }: Introducti
         <motion.div
           variants={fadeUpVariants}
           whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
         >
           <Button className={clsx("cursor-pointer sm:w-50", isDarkTheme ? "bg-white text-black" : "")}>
             <> Download CV </>

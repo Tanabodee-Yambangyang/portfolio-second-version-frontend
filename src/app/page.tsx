@@ -10,6 +10,7 @@ import AboutMeSection from "@/components/sections/AboutMeSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ExperiencesSection from "@/components/sections/ExperiencesSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
+import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   const {
@@ -24,30 +25,7 @@ export default function Home() {
     experienceData,
     projectData
   } = usePortfolioData();
-
-  const contactLinks = [
-    {
-      href: contactData?.facebook ?? "",
-      label: "Facebook",
-      icon: <FaFacebook size={40} />,
-    },
-    {
-      href: contactData?.linkedin ?? "",
-      label: "LinkedIn",
-      icon: <FaLinkedin size={40} />,
-    },
-    {
-      href: contactData?.github ?? "",
-      label: "GitHub",
-      icon: <FaGithub size={40} />,
-    },
-    {
-      href: `mailto:${contactData?.email}`,
-      label: "Email",
-      icon: <FaEnvelope size={40} />,
-    },
-  ];
-
+  
   return (
     <div className={clsx("grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)] transition", isDarkTheme ? "bg-neutral-900 text-white" : "")}>
       <div className="hidden xl:block w-full">
@@ -64,6 +42,7 @@ export default function Home() {
           <SkillsSection isDarkTheme={isDarkTheme} skills={skillsData} profile={undefined} />
           <ExperiencesSection isDarkTheme={isDarkTheme} profile={undefined} experienceData={experienceData} />
           <ProjectsSection isDarkTheme={isDarkTheme} profile={undefined} projectData={projectData} />
+          <ContactSection isDarkTheme={isDarkTheme} profile={undefined} contactData={contactData} />
       </div>
     </div>
   );

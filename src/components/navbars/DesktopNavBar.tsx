@@ -12,6 +12,15 @@ export default function DesktopNavBar({
   handleSwitchTheme,
 }: NavBarPropsInterface) {
 
+  const navItems = [
+    "About Me",
+    "Education",
+    "Skills & Tools",
+    "Experience",
+    "Projects",
+    "Contact",
+  ];
+
   return (
     <nav className="flex justify-center items-center fixed top-0 w-full h-16 bg-neutral-800 text-white z-50">
       <div className="flex justify-between items-center w-full max-w-[1250px] px-14">
@@ -24,42 +33,20 @@ export default function DesktopNavBar({
             alt="Website Logo"
             priority
           />
-          <div className="flex gap-6 text-lg font-medium">
-            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
-              About Me
-            </Button>
-            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
-              Education
-            </Button>
-            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
-              Skills & Tools
-            </Button>
-            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
-              Experience
-            </Button>
-            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
-              Projects
-            </Button> 
-            <Button className="cursor-pointer w-20 hover:bg-transparent bg-transparent hover:text-gray-300 transition">
-              Contact
-            </Button>           
+          <div className="flex gap-2 text-lg font-medium">
+            {navItems.map((item) => (
+              <Button
+                key={item}
+                className="cursor-pointer w-24 hover:bg-transparent bg-transparent hover:text-gray-300 transition"
+              >
+                {item}
+              </Button>
+            ))}
           </div>
         </div>
 
         {/* Social Icons + Theme Switch */}
         <div className="flex items-center gap-6">
-          {/* {contactLinks.map(({ href, label, icon }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="hover:text-gray-300 transition"
-            >
-              {icon}
-            </a>
-          ))} */}
           <label> <LiveClock /> </label>
 
           <label className="flex items-center text-4xl"> | </label>

@@ -1,4 +1,4 @@
-import { Skills, Education, Experience, Project } from "./fetchedData";
+import { Skills, Education, Experience, Project, Contact } from "./fetchedData";
 
 export type IntroductionSectionProps = {
   isDarkTheme: boolean;
@@ -41,4 +41,8 @@ export type ProjectsSectionProps = IntroductionSectionProps & {
 export type ProjectCardProps = {
   project: Project;
   isDarkTheme: boolean;
+}
+
+export type ContactSectionProps = IntroductionSectionProps & {
+  contactData: Contact | null | undefined;
 }

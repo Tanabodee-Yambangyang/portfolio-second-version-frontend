@@ -52,7 +52,6 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData }: 
                 >
                     <motion.div
                         variants={fadeUpVariants}
-                        whileTap={{ scale: 0.98 }}
                     >
                         <div className="h-65 w-45 p-6 py-12 border border-gray-300 shadow-md bg-white">
                             <Image
@@ -95,7 +94,6 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData }: 
                     >
                         <motion.div
                             variants={fadeUpVariants}
-                            whileTap={{ scale: 0.98 }}
                         >
                             <div className="h-90 w-70 p-6 py-12 border border-gray-300 shadow-md bg-white">
                                 <Image
@@ -122,7 +120,6 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData }: 
                 </motion.div>
                 <motion.div
                     variants={fadeUpVariants}
-                    whileTap={{ scale: 0.98 }}
                 >
                     <div className="">
 
