@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { ContactSectionProps } from "@/types/sections";
 import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
-export default function ContactSection({ isDarkTheme, contactData }: ContactSectionProps) {
+export default function ContactSection({ isDarkTheme, contactData, ref }: ContactSectionProps) {
     const containerVariants = {
         hidden: {},
         visible: {
@@ -70,7 +70,7 @@ export default function ContactSection({ isDarkTheme, contactData }: ContactSect
         >
             <motion.div className="items-center flex flex-col justify-between sm:gap-8 gap-6" variants={containerVariants}>
                 <motion.div className="items-center flex flex-col gap-1" variants={fadeUpVariants}>
-                    <div className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg">
+                    <div className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg" ref={ref}>
                         Contact
                     </div>
                     <div className={clsx("lg:text-lg sm:text-base text-xs",

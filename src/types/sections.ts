@@ -1,3 +1,4 @@
+import { Ref, RefObject } from "react";
 import { Skills, Education, Experience, Project, Contact } from "./fetchedData";
 
 export type IntroductionSectionProps = {
@@ -9,15 +10,18 @@ export type IntroductionSectionProps = {
     about_me: string;
     introduction: string;
   } | null | undefined;
+  scrollTargetRef?: React.RefObject<HTMLDivElement | null>;
 };
 
 export type AboutMeSectionProps = IntroductionSectionProps & {
   educationData: Education[] | null | undefined;
+  ref: Ref<HTMLDivElement> | undefined
+  eduRef: Ref<HTMLDivElement> | undefined
 };
 
 export type SkillsSectionProps = IntroductionSectionProps & {
   skills: Skills | null | undefined;
-  // additional props for AboutMeSection here if needed in the future
+  scrollRef: Ref<HTMLDivElement> | undefined
 };
 
 export type EducationCardProps = IntroductionSectionProps & {
@@ -28,6 +32,7 @@ export type EducationCardProps = IntroductionSectionProps & {
 
 export type ExperiencesSectionProps = IntroductionSectionProps & {
   experienceData: Experience[] | null | undefined;
+  ref: Ref<HTMLDivElement> | undefined
 }
 
 export type ExperienceCardProps = {
@@ -36,6 +41,7 @@ export type ExperienceCardProps = {
 
 export type ProjectsSectionProps = IntroductionSectionProps & {
   projectData: Project[] | null | undefined;
+  ref: Ref<HTMLDivElement> | undefined
 }
 
 export type ProjectCardProps = {
@@ -45,4 +51,5 @@ export type ProjectCardProps = {
 
 export type ContactSectionProps = IntroductionSectionProps & {
   contactData: Contact | null | undefined;
+  ref: Ref<HTMLDivElement> | undefined
 }

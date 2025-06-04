@@ -6,7 +6,7 @@ import EducationCard from "@/components/sections/EducationCard";
 
 import { AboutMeSectionProps } from "@/types/sections";
 
-export default function AboutMeSection({ isDarkTheme, profile, educationData }: AboutMeSectionProps) {
+export default function AboutMeSection({ isDarkTheme, profile, educationData, ref, eduRef }: AboutMeSectionProps) {
     // Reusable motion variants
     const containerVariants = {
         hidden: {},
@@ -41,6 +41,7 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData }: 
                 "flex flex-col gap-10 border-b-1 pb-12",
                 isDarkTheme ? "border-white" : "border-gray-700"
             )}
+            ref={ref}
         >
             <div className={clsx(
                 "flex lg:flex-row flex-col justify-between gap-20 border-b-1 pb-12",
@@ -111,6 +112,7 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData }: 
             <motion.div
                 className="justify-center items-center w-full"
                 variants={containerVariants}
+                ref={eduRef}
             >
                 <motion.div
                     variants={fadeUpVariants}

@@ -1,6 +1,7 @@
 "use client";
-import { FaFacebook, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+
 import clsx from "clsx";
+import { useRef } from "react";
 
 import DesktopNavBar from "@/components/navbars/DesktopNavBar";
 import MobileTabletNavbar from "@/components/navbars/MobileTabletNavBar";
@@ -11,6 +12,7 @@ import SkillsSection from "@/components/sections/SkillsSection";
 import ExperiencesSection from "@/components/sections/ExperiencesSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import GoToTopBtn from "@/components/GoToTopBtn";
 
 export default function Home() {
   const {
@@ -25,24 +27,56 @@ export default function Home() {
     experienceData,
     projectData
   } = usePortfolioData();
-  
+
+  // Declare refs for each section
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const educationRef = useRef<HTMLDivElement>(null);
+
+  // Scroll handler
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>, offset = 100) => {
+    if (ref.current) {
+      const elementPosition = ref.current.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className={clsx("grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)] transition", isDarkTheme ? "bg-neutral-900 text-white" : "")}>
+      <GoToTopBtn />
       <div className="hidden xl:block w-full">
-        <DesktopNavBar isDarkTheme={isDarkTheme} handleSwitchTheme={handleSwitchTheme} />
+        <DesktopNavBar
+          isDarkTheme={isDarkTheme}
+          handleSwitchTheme={handleSwitchTheme}
+          onNavItemClick={(section) => {
+            if (section === "About Me") scrollToSection(aboutRef);
+            if (section === "Skills & Tools") scrollToSection(skillsRef);
+            if (section === "Experience") scrollToSection(experienceRef);
+            if (section === "Education") scrollToSection(educationRef);
+            if (section === "Projects") scrollToSection(projectsRef);
+            if (section === "Contact") scrollToSection(contactRef);
+          }}
+        />
       </div>
       <div className="block xl:hidden w-full">
         <MobileTabletNavbar isDarkTheme={isDarkTheme} handleSwitchTheme={handleSwitchTheme} />
       </div>
 
       <div className={"flex flex-col gap-12 w-full h-full max-w-[1250px] xl:px-14 xl:pt-35 pt-30 px-6"}>
-          {/* <label> <LiveClock /> </label> */}
-          <IntroductionSection isDarkTheme={isDarkTheme} profile={profile} />
-          <AboutMeSection isDarkTheme={isDarkTheme} profile={profile} educationData={educationData} />
-          <SkillsSection isDarkTheme={isDarkTheme} skills={skillsData} profile={undefined} />
-          <ExperiencesSection isDarkTheme={isDarkTheme} profile={undefined} experienceData={experienceData} />
-          <ProjectsSection isDarkTheme={isDarkTheme} profile={undefined} projectData={projectData} />
-          <ContactSection isDarkTheme={isDarkTheme} profile={undefined} contactData={contactData} />
+        <IntroductionSection isDarkTheme={isDarkTheme} profile={profile} scrollTargetRef={projectsRef}/>
+        <AboutMeSection isDarkTheme={isDarkTheme} profile={profile} educationData={educationData} ref={aboutRef} eduRef={educationRef} />
+        <SkillsSection isDarkTheme={isDarkTheme} skills={skillsData} profile={undefined} scrollRef={skillsRef} />
+        <ExperiencesSection isDarkTheme={isDarkTheme} profile={undefined} experienceData={experienceData} ref={experienceRef} />
+        <ProjectsSection isDarkTheme={isDarkTheme} profile={undefined} projectData={projectData} ref={projectsRef} />
+        <ContactSection isDarkTheme={isDarkTheme} profile={undefined} contactData={contactData} ref={contactRef} />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 import { SkillsSectionProps } from "@/types/sections";
 import clsx from "clsx";
 
-export default function SkillsSection({ isDarkTheme, skills }: SkillsSectionProps) {
+export default function SkillsSection({ isDarkTheme, skills, scrollRef }: SkillsSectionProps) {
   const ref = useRef(null);
   const controls = useAnimation();
   const inView = useInView(ref, { once: true });
@@ -73,6 +73,7 @@ export default function SkillsSection({ isDarkTheme, skills }: SkillsSectionProp
       <motion.div
         variants={titleVariants}
         className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg"
+        ref={scrollRef}
       >
         Skills & Familiar Tools.
       </motion.div>

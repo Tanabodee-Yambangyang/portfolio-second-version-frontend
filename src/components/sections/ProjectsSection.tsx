@@ -5,7 +5,7 @@ import ProjectCard from "./ProjectCard";
 
 import { ProjectsSectionProps } from "@/types/sections";
 
-export default function ProjectsSection({ isDarkTheme, projectData }: ProjectsSectionProps) {
+export default function ProjectsSection({ isDarkTheme, projectData, ref }: ProjectsSectionProps) {
     const containerVariants = {
         hidden: {},
         visible: {
@@ -43,6 +43,7 @@ export default function ProjectsSection({ isDarkTheme, projectData }: ProjectsSe
             <motion.div
                 variants={fadeUpVariants}
                 className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg"
+                ref={ref}
             >
                 Projects.
             </motion.div>

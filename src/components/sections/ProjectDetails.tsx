@@ -88,10 +88,10 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
             <CarouselNext className="cursor-pointer" />
           </Carousel>
           <p className="text-xs text-gray-500 text-center xl:hidden">
-            Tap the image to view it in full screen.
+            Tap the image to view the full image.
           </p>
           <p className="text-xs text-gray-500 text-center hidden xl:flex">
-            Click on the image to view it in full screen.
+            Click on the image to view the full image.
           </p>
           {/* Tabs */}
           <Tabs defaultValue="overview" className="w-full mt-5">
@@ -103,7 +103,7 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
               <Button asChild className="cursor-pointer text-xs text-white bg-black py-2">
                 <a href={project.github} target="_blank" rel="noopener noreferrer">
                   <FaGithub className="text-white sm:mr-2" />
-                  <div className="hidden sm:flex"> Repository </div>                  
+                  <div className="hidden sm:flex"> Repository </div>
                 </a>
               </Button>
             </div>
@@ -139,7 +139,8 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
 
       {/* Image Full Preview Dialog */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-screen p-0 overflow-hidden">
+        <DialogContent className="max-w-screen-xl max-h-screen overflow-auto p-0">
+
           <DialogHeader>
             <DialogTitle className="sr-only">Image Preview</DialogTitle>
           </DialogHeader>

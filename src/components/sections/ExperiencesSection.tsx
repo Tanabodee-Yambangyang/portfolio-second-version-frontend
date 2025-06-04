@@ -5,7 +5,7 @@ import ExperienceCard from "@/components/sections/ExperienceCard";
 
 import { ExperiencesSectionProps } from "@/types/sections"
 
-export default function ExperiencesSection({ isDarkTheme, experienceData }: ExperiencesSectionProps) {
+export default function ExperiencesSection({ isDarkTheme, experienceData, ref }: ExperiencesSectionProps) {
     const containerVariants = {
         hidden: {},
         visible: {
@@ -43,6 +43,7 @@ export default function ExperiencesSection({ isDarkTheme, experienceData }: Expe
             <motion.div
                 variants={fadeUpVariants}
                 className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg"
+                ref={ref}
             >
                 Experience.
             </motion.div>

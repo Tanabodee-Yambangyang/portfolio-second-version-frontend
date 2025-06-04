@@ -6,7 +6,7 @@ import { ArrowRightIcon, ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 import { Button } from "@/components/ui/button";
 import { IntroductionSectionProps } from "@/types/sections";
 
-export default function IntroductionSection({ isDarkTheme, profile }: IntroductionSectionProps) {
+export default function IntroductionSection({ isDarkTheme, profile, scrollTargetRef }: IntroductionSectionProps) {
   // Motion variants
   const containerVariants = {
     hidden: {},
@@ -30,6 +30,18 @@ export default function IntroductionSection({ isDarkTheme, profile }: Introducti
       },
     },
   };
+
+  const scrollToSection = (ref?: React.RefObject<HTMLDivElement | null>, offset = 100) => {
+  if (ref?.current) {
+    const elementPosition = ref.current.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+};
 
   return (
     <motion.div
@@ -69,7 +81,10 @@ export default function IntroductionSection({ isDarkTheme, profile }: Introducti
           variants={fadeUpVariants}
           whileHover={{ scale: 1.05 }}
         >
-          <Button className={clsx("cursor-pointer sm:w-50", isDarkTheme ? "bg-white text-black" : "")}>
+          <Button
+            className={clsx("cursor-pointer sm:w-50", isDarkTheme ? "bg-white text-black" : "")}
+            onClick={() => scrollToSection(scrollTargetRef)}
+          >
             <> View my projects </>
             <ArrowRightIcon />
           </Button>

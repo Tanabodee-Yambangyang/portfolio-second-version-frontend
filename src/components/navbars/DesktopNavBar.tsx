@@ -5,12 +5,13 @@ import { FiMoon, FiSun } from "react-icons/fi";
 
 import { Button } from "@/components/ui/button";
 import LiveClock from "@/components/LiveClock";
-import { NavBarPropsInterface } from "@/types/navbars";
+import { DesktopNavBarPropsInterface } from "@/types/navbars";
 
 export default function DesktopNavBar({
   isDarkTheme,
   handleSwitchTheme,
-}: NavBarPropsInterface) {
+  onNavItemClick
+}: DesktopNavBarPropsInterface) {
 
   const navItems = [
     "About Me",
@@ -38,6 +39,7 @@ export default function DesktopNavBar({
               <Button
                 key={item}
                 className="cursor-pointer w-24 hover:bg-transparent bg-transparent hover:text-gray-300 transition"
+                onClick={() => onNavItemClick(item)}
               >
                 {item}
               </Button>
