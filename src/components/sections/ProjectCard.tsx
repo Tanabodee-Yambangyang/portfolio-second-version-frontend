@@ -5,24 +5,14 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import {
-    Drawer,
-    DrawerClose,
-    DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-} from "@/components/ui/drawer";
 import Image from 'next/image';
-import clsx from "clsx";
-
 import { Button } from "@/components/ui/button";
+
+import ProjectDetails from "@/components/sections/ProjectDetails";
 
 import { ProjectCardProps } from "@/types/sections";
 
-export default function ProjectCard({ project, isDarkTheme }: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
     return (
         <Card className="w-full h-full p-6 flex flex-col justify-between">
             <CardHeader className="p-0 mb-2">
@@ -46,11 +36,7 @@ export default function ProjectCard({ project, isDarkTheme }: ProjectCardProps) 
             </CardContent>
 
             <CardFooter className="p-0 pt-4">
-                <Button
-                    className="cursor-pointer w-full text-sm text-white bg-black"
-                >
-                    View Details
-                </Button>
+                <ProjectDetails project={project} isDarkTheme={false} />
             </CardFooter>
         </Card>
     );
