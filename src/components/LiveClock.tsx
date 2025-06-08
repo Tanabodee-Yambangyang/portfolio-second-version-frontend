@@ -1,33 +1,37 @@
 "use client";
 import { useState, useEffect } from "react";
-import Clock from 'react-live-clock';
 import clsx from "clsx";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import weekday from "dayjs/plugin/weekday";
+import updateLocale from "dayjs/plugin/updateLocale";
 
 import { LiveClockProps } from "@/types/liveclock";
 import useMediaQuery from "@/hooks/useMediaQuery";
 
-export default function LiveClock({
-}: LiveClockProps) {
-    const [hasMounted, setHasMounted] = useState(false);
+dayjs.extend(localizedFormat);
+dayjs.extend(weekday);
+dayjs.extend(updateLocale);
+
+export default function LiveClock({}: LiveClockProps) {
+    const [time, setTime] = useState(dayjs());
+    const isLargeScreen = useMediaQuery("(min-width: 1280px)");
 
     useEffect(() => {
-        setHasMounted(true);
-    }, []);
+        const interval = setInterval(() => {
+            setTime(dayjs());
+        }, 1000);
 
-    const isLargeScreen = useMediaQuery("(min-width: 1280px)");
+        return () => clearInterval(interval);
+    }, []);
 
     const format = isLargeScreen
         ? "dddd, DD MMMM YYYY, hh:mm:ss A"
         : "YYYY-MM-DD, hh:mm:ss A";
 
-    if (!hasMounted) return null;
-
     return (
-        <Clock
-            key={format}
-            format={format}
-            ticking={true}
-            className={clsx(isLargeScreen ? "text-base" : "text-sm")}
-        />
+        <span className={clsx(isLargeScreen ? "text-base" : "text-sm")}>
+            {time.format(format)}
+        </span>
     );
 }
