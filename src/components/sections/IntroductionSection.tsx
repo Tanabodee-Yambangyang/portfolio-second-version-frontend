@@ -57,7 +57,7 @@ export default function IntroductionSection({ isDarkTheme, profile, scrollTarget
       <motion.div className="flex flex-col justify-between sm:gap-8 gap-6" variants={containerVariants}>
         <motion.div className="flex flex-col lg:gap-4" variants={fadeUpVariants}>
           <div className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg">
-            <b>Hello</b>, I'm {profile?.first_name} {profile?.last_name}.
+            <b>Hello</b>, I&apos;m {profile?.first_name} {profile?.last_name}.
           </div>
           <div className="lg:text-lg sm:text-base text-xs">
             Aspiring Software Engineer | Web Developer

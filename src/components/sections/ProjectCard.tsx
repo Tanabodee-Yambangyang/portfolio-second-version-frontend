@@ -6,7 +6,6 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import Image from 'next/image';
-import { Button } from "@/components/ui/button";
 
 import ProjectDetails from "@/components/sections/ProjectDetails";
 

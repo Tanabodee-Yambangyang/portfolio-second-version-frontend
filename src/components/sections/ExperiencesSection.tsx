@@ -54,7 +54,7 @@ export default function ExperiencesSection({ isDarkTheme, experienceData, ref }:
                 <motion.div
                     variants={fadeUpVariants}
                 >
-                    {experienceData?.map((experience, index) => (
+                    {experienceData?.map((experience) => (
                         <ExperienceCard key={experience.id} experience={experience} />
                     ))}
                 </motion.div>

@@ -126,11 +126,10 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData, re
                     <div className="">
 
                     </div>
-                    {educationData?.map((educationData, index) => (
+                    {educationData?.map((educationData) => (
                         <div key={educationData.id}>
                             <EducationCard
                                 key={educationData.id}
-                                id={educationData.id}
                                 educationData={educationData}
                                 isDarkTheme={isDarkTheme}
                                 profile={undefined}

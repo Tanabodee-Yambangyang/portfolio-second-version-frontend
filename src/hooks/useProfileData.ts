@@ -39,7 +39,7 @@ export const usePortfolioData = () => {
                 setEducationData(data.education);
                 setExperienceData(data.experiences);
                 setProjectData(data.projects);
-            } catch (err) {
+            } catch {
                 setError(true);
             } finally {
                 setLoading(false);

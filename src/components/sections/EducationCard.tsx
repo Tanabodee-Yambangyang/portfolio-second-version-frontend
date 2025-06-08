@@ -7,11 +7,13 @@ import {
 } from "@/components/ui/card"
 import { EducationCardProps } from "@/types/sections";
 
-export default function EducationCard({ id, educationData }: EducationCardProps) {
+export default function EducationCard({ educationData }: EducationCardProps) {
     return (
         <Card className="w-full">
             <CardHeader>
-                <CardTitle className="md:text-base text-xs">{educationData.degrees}'s of {educationData.faculty}, {educationData.major}</CardTitle>
+                <CardTitle className="md:text-base text-xs">
+                    {educationData.degrees}&apos;s of {educationData.faculty}, {educationData.major}
+                </CardTitle>
                 <CardDescription>{educationData.university}</CardDescription>
             </CardHeader>
             <CardFooter>

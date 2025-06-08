@@ -1,4 +1,4 @@
-import { Ref, RefObject } from "react";
+import { Ref } from "react";
 import { Skills, Education, Experience, Project, Contact } from "./fetchedData";
 
 export type IntroductionSectionProps = {
@@ -27,7 +27,6 @@ export type SkillsSectionProps = IntroductionSectionProps & {
 
 export type EducationCardProps = IntroductionSectionProps & {
   key: string;
-  id: string;
   educationData: Education;
 };
 
