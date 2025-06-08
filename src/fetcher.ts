@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Profile } from "@/types/fetchedData";
 
-const END_POINT = "http://127.0.0.1:8000/profile";
+const END_POINT = "https://portfolio-second-version-backend-3.onrender.com/profile";
 
 export const fetchPortfolioData = async (): Promise<Profile[]> => {
   try {
