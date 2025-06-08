@@ -45,6 +45,7 @@ export interface Skills {
 }
 
 export interface Introduction {
+  cv: string;
   image: string;
   first_name: string;
   last_name: string;
@@ -54,6 +55,7 @@ export interface Introduction {
 }
 
 export interface Profile {
+  cv: string;
   image: string;
   first_name: string;
   last_name: string;

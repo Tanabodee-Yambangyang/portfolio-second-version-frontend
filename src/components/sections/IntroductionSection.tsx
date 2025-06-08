@@ -32,16 +32,16 @@ export default function IntroductionSection({ isDarkTheme, profile, scrollTarget
   };
 
   const scrollToSection = (ref?: React.RefObject<HTMLDivElement | null>, offset = 100) => {
-  if (ref?.current) {
-    const elementPosition = ref.current.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - offset;
+    if (ref?.current) {
+      const elementPosition = ref.current.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-  }
-};
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <motion.div
@@ -94,9 +94,19 @@ export default function IntroductionSection({ isDarkTheme, profile, scrollTarget
           variants={fadeUpVariants}
           whileHover={{ scale: 1.05 }}
         >
-          <Button className={clsx("cursor-pointer sm:w-50", isDarkTheme ? "bg-white text-black" : "")}>
-            <> Download CV </>
-            <ArrowDownTrayIcon />
+          <Button
+            asChild
+            className={clsx("cursor-pointer sm:w-50", isDarkTheme ? "bg-white text-black" : "")}
+          >
+            <a
+              href={profile?.cv}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <> Download CV </>
+              <ArrowDownTrayIcon />
+            </a>
           </Button>
         </motion.div>
       </motion.div>

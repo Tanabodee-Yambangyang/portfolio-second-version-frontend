@@ -25,6 +25,7 @@ export const usePortfolioData = () => {
                 const result = await fetchPortfolioData();
                 const data = result[0]
                 const introData = {
+                    cv: data.cv,
                     image: data.image,
                     first_name: data.first_name,
                     last_name: data.last_name,

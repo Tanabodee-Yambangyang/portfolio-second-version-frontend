@@ -25,7 +25,7 @@ export default function GoToTopBtn() {
 
     return (
         <div
-            className={clsx("fixed bottom-6 right-6 z-50 rounded-full p-4 bg-gray-100 shadow-md cursor-pointer transition-opacity duration-300",
+            className={clsx("fixed bottom-6 right-6 z-50 rounded-full p-4 bg-gray-100 shadow-lg cursor-pointer transition-opacity duration-300",
                 scrollPercent > 15 ? "opacity-100" : "opacity-0 pointer-events-none")}
             onClick={scrollToTop}
         >

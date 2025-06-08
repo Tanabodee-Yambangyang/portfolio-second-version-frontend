@@ -4,6 +4,7 @@ import { Skills, Education, Experience, Project, Contact } from "./fetchedData";
 export type IntroductionSectionProps = {
   isDarkTheme: boolean;
   profile: {
+    cv: string;
     image: string;
     first_name: string;
     last_name: string;
