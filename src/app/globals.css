@@ -119,5 +119,11 @@
 
   body {
     @apply bg-background text-foreground;
-  }  
+  }
+
+  @media screen and (orientation: landscape) and (max-width: 1023px) {
+    .landscape-dialog {
+      border-radius: 0 !important;
+    }
+  }
 }

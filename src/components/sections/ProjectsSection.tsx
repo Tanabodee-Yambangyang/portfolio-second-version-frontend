@@ -48,7 +48,7 @@ export default function ProjectsSection({ isDarkTheme, projectData, ref }: Proje
                 Projects.
             </motion.div>
 
-            <div className="grid md:grid-cols-3 grid-cols-1 w-full gap-8">
+            <div className="grid lg:grid-cols-3 grid-cols-1 w-full gap-8">
                 {projectData?.map((project) => (
                     <motion.div
                         key={project.id}

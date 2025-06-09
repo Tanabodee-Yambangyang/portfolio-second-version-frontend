@@ -3,9 +3,7 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -30,7 +28,6 @@ import { FaGithub } from "react-icons/fa";
 import { ProjectCardProps } from "@/types/sections";
 
 export default function ProjectDetails({ project }: ProjectCardProps) {
-
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -39,7 +36,7 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="flex flex-col items-center justify-center w-full sm:max-w-3xl p-6 xl:px-12">
+      <DialogContent className="flex flex-col items-center justify-between w-full landscape-dialog sm:max-w-screen lg:max-w-3xl p-6 pb-18 xl:px-12 max-h-screen overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-lg">{project.name}</DialogTitle>
         </DialogHeader>
@@ -47,10 +44,7 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-1 mt-2 mb-3 text-xs text-black">
           {project.technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="px-2 py-0.5 bg-gray-100 rounded-sm"
-            >
+            <span key={index} className="px-2 py-0.5 bg-gray-100 rounded-sm">
               {tech}
             </span>
           ))}
@@ -62,7 +56,7 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
             {project.images.map((image, index) => (
               <CarouselItem key={index}>
                 <div
-                  className="relative w-full h-48 md:h-56 rounded-md overflow-hidden cursor-pointer group"
+                  className="relative w-full h-40 sm:h-48 md:h-56 rounded-md overflow-hidden cursor-pointer group"
                   onClick={() => window.open(image, "_blank")}
                 >
                   <Image
@@ -84,19 +78,22 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
           <CarouselPrevious className="cursor-pointer" />
           <CarouselNext className="cursor-pointer" />
         </Carousel>
-        <p className="text-xs text-gray-500 text-center xl:hidden">
+
+        <p className="text-xs text-gray-500 text-center xl:hidden mt-1">
           Tap the image to open the full image in a new tab.
         </p>
-        <p className="text-xs text-gray-500 text-center hidden xl:flex">
+        <p className="text-xs text-gray-500 text-center hidden xl:flex mt-1">
           Click the image to open the full image in a new tab.
         </p>
+
         {/* Tabs */}
         <Tabs defaultValue="overview" className="w-full mt-5">
-          <div className="flex gap-2 w-full">
+          <div className="flex flex-wrap gap-2 w-full">
             <TabsList className="text-xs">
               <TabsTrigger value="overview" className="cursor-pointer">Overview</TabsTrigger>
               <TabsTrigger value="my-responsibilities" className="cursor-pointer">My Responsibilities</TabsTrigger>
             </TabsList>
+
             <Button asChild className="cursor-pointer text-xs text-white bg-black py-2">
               <a href={project.github} target="_blank" rel="noopener noreferrer">
                 <FaGithub className="text-white sm:mr-2" />
@@ -104,16 +101,17 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
               </a>
             </Button>
           </div>
+
           <TabsContent
             value="overview"
-            className="pt-3 text-sm leading-relaxed md:max-h-35 max-h-25 overflow-y-auto pr-2"
+            className="pt-3 text-sm leading-relaxed max-h-35 sm:max-h-40 overflow-y-auto pr-2"
           >
             {project.description}
           </TabsContent>
 
           <TabsContent
             value="my-responsibilities"
-            className="pt-3 md:max-h-30 max-h-25 overflow-y-auto pr-2"
+            className="pt-3 max-h-35 overflow-y-auto pr-2"
           >
             <ul className="list-disc ml-4 space-y-1 text-sm leading-relaxed">
               {project.responsibilities.map((item, index) => (
@@ -121,16 +119,7 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
               ))}
             </ul>
           </TabsContent>
-        </Tabs>
-
-        {/* Footer */}
-        <DialogFooter className="sm:justify-start mt-4">
-          <DialogClose asChild>
-            <Button type="button" variant="secondary" className="cursor-pointer text-xs px-3 py-1">
-              Close
-            </Button>
-          </DialogClose>
-        </DialogFooter>
+        </Tabs>        
       </DialogContent>
     </Dialog>
   );
