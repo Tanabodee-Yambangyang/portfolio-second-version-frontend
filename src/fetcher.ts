@@ -11,7 +11,7 @@ export const fetchPortfolioData = async (): Promise<Profile[]> => {
       return res.data;
     }
     throw new Error(`Unexpected response status: ${res.status}`);
-  } catch (error) {
+  } catch {
     return data;
   }
 };
