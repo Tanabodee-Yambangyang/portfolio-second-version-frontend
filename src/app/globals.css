@@ -119,24 +119,5 @@
 
   body {
     @apply bg-background text-foreground;
-  }
-
-  @media (max-width: 639px) {
-    .portrait {
-      transform: none;
-      width: 100vw;
-      height: 100vh;
-    }
-
-    .landscape {
-      transform: rotate(90deg);
-      transform-origin: center center;
-      width: 100vh;
-      height: 100vw;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-    }
-  }
+  }  
 }

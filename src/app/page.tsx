@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import clsx from "clsx";
 
 import DesktopNavBar from "@/components/navbars/DesktopNavBar";
@@ -15,36 +15,7 @@ import ContactSection from "@/components/sections/ContactSection";
 import GoToTopBtn from "@/components/GoToTopBtn";
 import ErrorComponent from "@/components/ErrorComponent";
 
-export default function Home() {
-
-  useEffect(() => {
-    const handleOrientation = () => {
-      const body = document.body;
-      const isMobile = window.innerWidth <= 639;
-
-      if (!isMobile) {
-        body.classList.remove('landscape', 'portrait');
-        return;
-      }
-
-      if (window.innerHeight >= window.innerWidth) {
-        body.classList.remove('landscape');
-        body.classList.add('portrait');
-      } else {
-        body.classList.remove('portrait');
-        body.classList.add('landscape');
-      }
-    };
-
-    window.addEventListener('resize', handleOrientation);
-    window.addEventListener('orientationchange', handleOrientation);
-    handleOrientation();
-
-    return () => {
-      window.removeEventListener('resize', handleOrientation);
-      window.removeEventListener('orientationchange', handleOrientation);
-    };
-  }, []);
+export default function Home() {  
 
   const {
     loading,
