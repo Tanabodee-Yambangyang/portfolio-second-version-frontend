@@ -1,7 +1,7 @@
 export const data = [
     {
         "image": "https://drive.google.com/file/d/1FfcrYXCYlvX00nCflS6zzTX0TB0Dsqnb/view?usp=sharing",
-        "cv": "https://docs.google.com/document/d/1KnFHW1oZn4871eB0QgizApktwu5RUmKmBdGM-BP1yL4/export?format=pdf",
+        "cv": "https://drive.google.com/file/d/1Mh26CJA-WB66Qqgt-s90O0QiDh5eCeis/view?usp=sharing",
         "first_name": "Tanabodee",
         "last_name": "Yambangyang",
         "address": "98/7, Moo 1, Wimonnut Village, Ya Chan Uthit Alley, Khun Kaeo Sub-district, Nakhon Chai Si District, Nakhon Pathom Province, 73120",

@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import clsx from "clsx";
-import { ArrowRightIcon, ArrowDownTrayIcon } from '@heroicons/react/24/solid';
+import { ArrowRightIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
 import { Button } from "@/components/ui/button";
 import { IntroductionSectionProps } from "@/types/sections";
@@ -104,8 +104,8 @@ export default function IntroductionSection({ isDarkTheme, profile, scrollTarget
               target="_blank"
               rel="noopener noreferrer"
             >
-              <> Download CV </>
-              <ArrowDownTrayIcon />
+              <> View my resume </>
+              <ArrowTopRightOnSquareIcon />
             </a>
           </Button>
         </motion.div>
