@@ -42,7 +42,7 @@ export default function ProjectsSection({ isDarkTheme, projectData, ref }: Proje
         >
             <motion.div
                 variants={fadeUpVariants}
-                className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg"
+                className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg font-semibold"
                 ref={ref}
             >
                 Projects.

@@ -69,7 +69,7 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData, re
                 <div className="flex flex-col">
                     <motion.div
                         variants={fadeUpVariants}
-                        className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg"
+                        className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg font-semibold"
                     >
                         About Me.
                     </motion.div>
@@ -116,7 +116,7 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData, re
             >
                 <motion.div
                     variants={fadeUpVariants}
-                    className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg mb-8"
+                    className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg mb-8 font-semibold"
                 >
                     Education.
                 </motion.div>

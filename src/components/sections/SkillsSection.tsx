@@ -72,7 +72,7 @@ export default function SkillsSection({ isDarkTheme, skills, scrollRef }: Skills
     >
       <motion.div
         variants={titleVariants}
-        className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg"
+        className="flex lg:text-5xl md:text-4xl sm:text-3xl text-lg font-semibold"
         ref={scrollRef}
       >
         Skills & Familiar Tools.
@@ -83,7 +83,7 @@ export default function SkillsSection({ isDarkTheme, skills, scrollRef }: Skills
           <div key={idx}>
             <motion.div
               variants={titleVariants}
-              className="sm:text-xl text-base font-semibold mb-2"
+              className="sm:text-xl text-base mb-2"
             >
               {category.title}
             </motion.div>
