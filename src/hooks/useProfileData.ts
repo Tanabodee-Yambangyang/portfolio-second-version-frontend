@@ -1,5 +1,6 @@
 "use client";
-import { fetchPortfolioData } from "@/fetcher";
+import { portfolioData } from "@/data";
+
 import { useState, useEffect } from "react";
 import { Contact, Introduction, Education, Project, Experience, Skills } from "@/types/fetchedData";
 
@@ -21,9 +22,8 @@ export const usePortfolioData = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                setLoading(true);
-                const result = await fetchPortfolioData();
-                const data = result[0]
+                setLoading(true);                
+                const data = portfolioData[0]
                 const introData = {
                     cv: data.cv,
                     image: data.image,

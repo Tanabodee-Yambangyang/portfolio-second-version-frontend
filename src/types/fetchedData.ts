@@ -37,7 +37,9 @@ export interface Experience {
 
 export interface Skills {
   programming_languages: string[];
-  web_development: string[];
+  frontend: string[];
+  backend: string[];
+  databases: string[];
   tools_platforms: string[];
   methodologies: string[];
   soft_skills: string[];

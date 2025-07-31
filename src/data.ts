@@ -1,7 +1,7 @@
-export const data = [
+export const portfolioData = [
     {
+        "cv": "https://drive.google.com/file/d/1IGyNZdcm9skTIKVG4ZSoImEyC-GOO8tg/view?usp=sharing",
         "image": "https://drive.google.com/file/d/1FfcrYXCYlvX00nCflS6zzTX0TB0Dsqnb/view?usp=sharing",
-        "cv": "https://drive.google.com/file/d/1Mh26CJA-WB66Qqgt-s90O0QiDh5eCeis/view?usp=sharing",
         "first_name": "Tanabodee",
         "last_name": "Yambangyang",
         "address": "98/7, Moo 1, Wimonnut Village, Ya Chan Uthit Alley, Khun Kaeo Sub-district, Nakhon Chai Si District, Nakhon Pathom Province, 73120",
@@ -144,17 +144,27 @@ export const data = [
                 "Java",
                 "SQL"
             ],
-            "web_development": [
+            "frontend": [
                 "HTML",
                 "CSS",
                 "React.js",
                 "Next.js",
+                "Tailwind CSS",
+                "React Native",
+                "Expo"
+            ],
+            "backend": [
                 "Django",
-                "Tailwind CSS"
+                "Express",
+                "FastAPI"
+            ],
+            "databases": [
+                "PostgreSQL"
             ],
             "tools_platforms": [
                 "unittest",
-                "Selenium"
+                "Selenium",
+                "Docker"
             ],
             "methodologies": [
                 "Agile",
@@ -164,7 +174,8 @@ export const data = [
                 "Problem Solving",
                 "Collaboration",
                 "Communication",
-                "Adaptability"
+                "Adaptability",
+                "Presentation"
             ],
             "languages": [
                 "Thai (Native)",

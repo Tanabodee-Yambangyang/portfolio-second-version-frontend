@@ -16,7 +16,9 @@ export default function SkillsSection({ isDarkTheme, skills, scrollRef }: Skills
 
   const skillCategories = [
     { title: "Programming Languages", items: skills?.programming_languages ?? [] },
-    { title: "Web Development", items: skills?.web_development ?? [] },
+    { title: "Frontend", items: skills?.frontend ?? [] },
+    { title: "Backend", items: skills?.backend ?? [] },
+    { title: "Databases", items: skills?.databases ?? [] },
     { title: "Tools & Platforms", items: skills?.tools_platforms ?? [] },
     { title: "Methodologies", items: skills?.methodologies ?? [] },
     { title: "Soft Skills", items: skills?.soft_skills ?? [] },

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { data } from "@/data";
+import { portfolioData } from "@/data";
 import { Profile } from "@/types/fetchedData";
 
 const END_POINT = "https://portfolio-second-version-backend-3.onrender.com/profile";
@@ -12,6 +12,6 @@ export const fetchPortfolioData = async (): Promise<Profile[]> => {
     }
     throw new Error(`Unexpected response status: ${res.status}`);
   } catch {
-    return data;
+    return portfolioData;
   }
 };
