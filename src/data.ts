@@ -5,7 +5,7 @@ export const portfolioData = [
         "first_name": "Tanabodee",
         "last_name": "Yambangyang",
         "address": "98/7, Moo 1, Wimonnut Village, Ya Chan Uthit Alley, Khun Kaeo Sub-district, Nakhon Chai Si District, Nakhon Pathom Province, 73120",
-        "about_me": "I'm Tanabodee YAMBANGYANG, a software engineer focusing on frontend development and web applications. I have hands-on experience building user interfaces and have also worked on model implementation for recommendation systems as part of my academic projects.\n\nI’m currently broadening my skills beyond frontend development, exploring backend technologies and essential software engineering principles. My goal is to become a more capable, well-rounded software engineer and continuously improve in my future career.",
+        "about_me": "I'm Tanabodee YAMBANGYANG, a software engineer focusing on frontend development and web applications. I have hands-on experience building user interfaces and have also worked on model implementation for recommendation systems as part of my academic projects.\n\nI am currently expanding my skill set beyond frontend development, exploring backend technologies and foundational software engineering principles. My goal is to become a well-rounded, capable software engineer, continually growing through both professional experience and further academic study.",
         "contact": {
             "facebook": "https://www.facebook.com/profile.php?id=100007994625777",
             "linkedin": "https://www.linkedin.com/in/tanabodee-yambangyang-11a3882a2/",
@@ -155,7 +155,7 @@ export const portfolioData = [
             ],
             "backend": [
                 "Django",
-                "Express",
+                "Express.js",
                 "FastAPI"
             ],
             "databases": [
@@ -164,7 +164,8 @@ export const portfolioData = [
             "tools_platforms": [
                 "unittest",
                 "Selenium",
-                "Docker"
+                "Docker",
+                "Vercel"
             ],
             "methodologies": [
                 "Agile",
