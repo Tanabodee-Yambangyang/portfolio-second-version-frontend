@@ -21,6 +21,14 @@ export const portfolioData = [
                 "major": "Software & Knowledge Engineering (International Program)",
                 "university": "Kasetsart University, Bangkhen",
                 "period": "2021 - 2025"
+            },
+            {
+                "id": "2",
+                "degrees": "Master",
+                "faculty": "Engineering",
+                "major": "Software Engineering",
+                "university": "Chulalongkorn University",
+                "period": "2025 - Present"
             }
         ],
         "projects": [
@@ -184,4 +192,5 @@ export const portfolioData = [
             ]
         }
     }
+
 ]
