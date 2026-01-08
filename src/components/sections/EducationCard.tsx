@@ -12,7 +12,7 @@ export default function EducationCard({ educationData }: EducationCardProps) {
         <Card className="w-full">
             <CardHeader>
                 <CardTitle className="md:text-base text-xs">
-                    {educationData.degrees}&apos;s of {educationData.faculty}, {educationData.major}
+                    {educationData.degrees} of {educationData.faculty} in {educationData.major}
                 </CardTitle>
                 <CardDescription>{educationData.university}</CardDescription>
             </CardHeader>
