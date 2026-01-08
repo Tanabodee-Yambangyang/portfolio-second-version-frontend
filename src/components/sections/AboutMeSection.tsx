@@ -121,11 +121,12 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData, re
                     Education.
                 </motion.div>
                 <motion.div
+                    className="flex flex-col gap-4"
                     variants={fadeUpVariants}
                 >
-                    <div className="">
+                    {/* <div className="">
 
-                    </div>
+                    </div> */}
                     {educationData?.map((educationData) => (
                         <div key={educationData.id}>
                             <EducationCard

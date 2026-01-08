@@ -24,7 +24,7 @@ export const portfolioData = [
             },
             {
                 "id": "2",
-                "degrees": "Master",
+                "degrees": "(Pursuing) Master",
                 "faculty": "Engineering",
                 "major": "Software Engineering",
                 "university": "Chulalongkorn University",
