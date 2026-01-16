@@ -82,7 +82,7 @@ export default function IntroductionSection({ isDarkTheme, profile, scrollTarget
           whileHover={{ scale: 1.05 }}
         >
           <Button
-            className={clsx("cursor-pointer sm:w-50", isDarkTheme ? "bg-white text-black" : "")}
+            className={clsx("cursor-pointer sm:w-50", isDarkTheme ? "border-1 border-white" : "")}
             onClick={() => scrollToSection(scrollTargetRef)}
           >
             <> View my projects </>
@@ -96,7 +96,7 @@ export default function IntroductionSection({ isDarkTheme, profile, scrollTarget
         >
           <Button
             asChild
-            className={clsx("cursor-pointer sm:w-50", isDarkTheme ? "bg-white text-black" : "")}
+            className={clsx("cursor-pointer sm:w-50", isDarkTheme ? "border-1 border-white" : "")}
           >
             <a
               href={profile?.cv}

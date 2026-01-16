@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 import {
     Card,
     CardDescription,
@@ -7,14 +9,14 @@ import {
 } from "@/components/ui/card"
 import { EducationCardProps } from "@/types/sections";
 
-export default function EducationCard({ educationData }: EducationCardProps) {
+export default function EducationCard({ educationData, isDarkTheme }: EducationCardProps) {
     return (
-        <Card className="w-full">
+        <Card className={clsx("w-full", isDarkTheme ? "bg-black text-white" : "")}>
             <CardHeader>
                 <CardTitle className="md:text-base text-xs">
                     {educationData.degrees} of {educationData.faculty} in {educationData.major}
                 </CardTitle>
-                <CardDescription>{educationData.university}</CardDescription>
+                <CardDescription className={clsx(isDarkTheme ? "text-white" : "")}>{educationData.university}</CardDescription>
             </CardHeader>
             <CardFooter>
                 <div>{educationData.period}</div>

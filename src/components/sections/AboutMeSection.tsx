@@ -54,7 +54,9 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData, re
                     <motion.div
                         variants={fadeUpVariants}
                     >
-                        <div className="h-65 w-45 p-6 py-12 border border-gray-300 shadow-md bg-white">
+                        <div className={clsx("h-65 w-45 p-6 py-12 border border-gray-300 shadow-md", 
+                            isDarkTheme ? "bg-black" : "bg-white"
+                        )}>
                             <Image
                                 src="/profile_pic.jpg"
                                 width={500}
@@ -96,7 +98,9 @@ export default function AboutMeSection({ isDarkTheme, profile, educationData, re
                         <motion.div
                             variants={fadeUpVariants}
                         >
-                            <div className="h-90 w-70 p-6 py-12 border border-gray-300 shadow-md bg-white">
+                            <div className={clsx("h-90 w-70 p-6 py-12 border border-gray-300 shadow-md bg-white",
+                                isDarkTheme ? "bg-black" : "bg-white"
+                            )}>
                                 <Image
                                     src="/profile_pic.jpg"
                                     width={500}

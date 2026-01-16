@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 import {
     Card,
     CardContent,
@@ -11,9 +13,9 @@ import ProjectDetails from "@/components/sections/ProjectDetails";
 
 import { ProjectCardProps } from "@/types/sections";
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, isDarkTheme }: ProjectCardProps) {
     return (
-        <Card className="w-full h-full p-6 flex flex-col justify-between">
+        <Card className={clsx("w-full h-full p-6 flex flex-col justify-between", isDarkTheme ? "bg-black text-white border-1 border-white" : "")}>
             <CardHeader className="p-0 mb-2">
                 <CardTitle className="md:text-base text-sm">{project.name}</CardTitle>
             </CardHeader>
@@ -35,7 +37,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </CardContent>
 
             <CardFooter className="p-0 pt-4">
-                <ProjectDetails project={project} isDarkTheme={false} />
+                <ProjectDetails project={project} isDarkTheme={isDarkTheme} />
             </CardFooter>
         </Card>
     );

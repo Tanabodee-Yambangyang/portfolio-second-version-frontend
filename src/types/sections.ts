@@ -37,6 +37,7 @@ export type ExperiencesSectionProps = IntroductionSectionProps & {
 
 export type ExperienceCardProps = {
   experience: Experience;
+  isDarkTheme: boolean;
 }
 
 export type ProjectsSectionProps = IntroductionSectionProps & {

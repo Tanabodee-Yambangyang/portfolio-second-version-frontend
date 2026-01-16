@@ -1,4 +1,5 @@
 "use client";
+import clsx from "clsx";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -27,16 +28,18 @@ import { FaGithub } from "react-icons/fa";
 
 import { ProjectCardProps } from "@/types/sections";
 
-export default function ProjectDetails({ project }: ProjectCardProps) {
+export default function ProjectDetails({ project, isDarkTheme }: ProjectCardProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="cursor-pointer w-full text-xs text-white bg-black py-2">
+        <Button className={clsx("cursor-pointer w-full text-xs text-white bg-black py-2",
+          isDarkTheme ? "border-1 border-white hover:bg-white hover:text-black" : ""
+        )}>
           View Details
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="flex flex-col items-center justify-between w-full landscape-dialog sm:max-w-screen lg:max-w-3xl p-6 pb-18 xl:px-12 max-h-screen overflow-y-auto">
+      <DialogContent className={clsx("flex flex-col items-center justify-between w-full landscape-dialog sm:max-w-screen lg:max-w-3xl p-6 pb-18 xl:px-12 max-h-screen overflow-y-auto", isDarkTheme ? "bg-black text-white border-1 border-white" : "")}>
         <DialogHeader>
           <DialogTitle className="text-lg">{project.name}</DialogTitle>
         </DialogHeader>
@@ -75,14 +78,14 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="cursor-pointer" />
-          <CarouselNext className="cursor-pointer" />
+          <CarouselPrevious className={clsx("cursor-pointer", isDarkTheme ? "text-black cursor-pointer" : "")} />
+          <CarouselNext className={clsx("cursor-pointer", isDarkTheme ? "text-black cursor-pointer" : "")} />
         </Carousel>
 
-        <p className="text-xs text-gray-500 text-center xl:hidden mt-1">
+        <p className={clsx("text-xs text-gray-500 text-center xl:hidden mt-1", isDarkTheme ? "text-white" : "")}>
           Tap the image to open the full image in a new tab.
         </p>
-        <p className="text-xs text-gray-500 text-center hidden xl:flex mt-1">
+        <p className={clsx("text-xs text-gray-500 text-center hidden xl:flex mt-1", isDarkTheme ? "text-white" : "")}>
           Click the image to open the full image in a new tab.
         </p>
 
@@ -94,7 +97,7 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
               <TabsTrigger value="my-responsibilities" className="cursor-pointer">My Responsibilities</TabsTrigger>
             </TabsList>
 
-            <Button asChild className="cursor-pointer text-xs text-white bg-black py-2">
+            <Button asChild className={clsx("cursor-pointer text-xs text-white bg-black py-2", isDarkTheme ? "border-1 border-white" : "")}>
               <a href={project.github} target="_blank" rel="noopener noreferrer">
                 <FaGithub className="text-white sm:mr-2" />
                 <div className="hidden sm:flex"> Repository </div>
@@ -119,7 +122,7 @@ export default function ProjectDetails({ project }: ProjectCardProps) {
               ))}
             </ul>
           </TabsContent>
-        </Tabs>        
+        </Tabs>
       </DialogContent>
     </Dialog>
   );

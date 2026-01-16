@@ -102,7 +102,7 @@ export default function SkillsSection({ isDarkTheme, skills, scrollRef }: Skills
                   <div
                     className={clsx(
                       "p-2 px-4 rounded-sm text-sm text-center transition-colors duration-300",
-                      isDarkTheme ? "bg-white text-black" : "bg-gray-100"
+                      isDarkTheme ? "bg-black text-white border-1 border-white" : "bg-gray-100"
                     )}
                   >
                     {item}

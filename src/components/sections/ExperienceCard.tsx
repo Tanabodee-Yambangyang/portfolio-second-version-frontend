@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 import {
     Card,
     CardDescription,
@@ -7,9 +9,9 @@ import {
 } from "@/components/ui/card";
 import { ExperienceCardProps } from "@/types/sections";
 
-export default function ExperienceCard({ experience }: ExperienceCardProps) {
+export default function ExperienceCard({ experience, isDarkTheme }: ExperienceCardProps) {
     return (
-        <Card className="w-full">
+        <Card className={clsx("w-full", isDarkTheme ? "bg-black text-white border-1 border-white" : "")}>
             <CardHeader>
                 <CardTitle className="md:text-base text-xs">{experience.position}</CardTitle>
                 <CardDescription className="md:text-base text-xs">
